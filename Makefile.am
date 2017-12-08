@@ -132,8 +132,8 @@ JHA/cuda_jha_compactionTest.o: JHA/cuda_jha_compactionTest.cu
 	$(NVCC) $(nvcc_FLAGS) -I cudpp-2.1/include --maxrregcount=80 -o $@ -c $<
 
 # This kernel need also an older SM to be able to autotune kernels
-scrypt/salsa_kernel.o: scrypt/salsa_kernel.cu
-	$(NVCC) $(nvcc_FLAGS) -gencode=arch=compute_20,code=\"sm_21,compute_20\" --maxrregcount=80 -o $@ -c $<
+# scrypt/salsa_kernel.o: scrypt/salsa_kernel.cu
+# 	$(NVCC) $(nvcc_FLAGS) -gencode=arch=compute_20,code=\"sm_21,compute_20\" --maxrregcount=80 -o $@ -c $<
 	
 skein.o: skein.cu
 	$(NVCC) $(nvcc_FLAGS) --maxrregcount=64 -o $@ -c $<
